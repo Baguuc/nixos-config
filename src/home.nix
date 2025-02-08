@@ -29,6 +29,9 @@
       "${homeDirectory}/.config/kitty/wallpaper.jpg" = {
         source = ./images/3.jpg;
       };
+      "${homeDirectory}/.config/kitty/current-theme.jpg" = {
+        source = ./configs/kitty/current-theme.conf;
+      };
     };
     sessionVariables = {};
 
