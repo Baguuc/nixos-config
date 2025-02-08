@@ -57,9 +57,6 @@
       desktopManager.xterm.enable = false;
       windowManager.i3 = {
         enable = true;
-	extraPackages = with pkgs; [
-	  i3lock
-	];
       };
 
       xkb = {
@@ -75,13 +72,6 @@
     isNormalUser = true;
     description = "baguuc";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kitty
-      brave
-      rofi
-      neovim
-      git
-    ];
   };
   
   nixpkgs.config.allowUnfree = true;

@@ -6,7 +6,14 @@
   home = rec {
     username = "baguuc";
     homeDirectory = "/home/baguuc";
-    packages = [];
+    packages = with pkgs; [
+      i3lock
+      kitty
+      brave
+      rofi
+      neovim
+      git
+    ];
     file = {
       "${homeDirectory}/.config/kitty/kitty.conf" = {
         source = ./configs/kitty/kitty.conf;
