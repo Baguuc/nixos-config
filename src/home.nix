@@ -3,7 +3,18 @@
 { 
   programs = {
     home-manager.enable = true;
-    bash.enable = true;
+    bash = {
+      enable = true;
+      bashrcExtra = ''
+	zell() {
+	  if [ -z "$ZELLIJ_SESSION_NAME" ]; then 
+	    zellij 
+	  fi
+	}
+
+	zell
+      '';
+    };
   };
   
   home = rec {
@@ -17,6 +28,7 @@
       neovim
       git
       bat
+      zellij
     ];
     shellAliases = {
       bat = ''bat --theme gruvbox-dark --style "numbers,changes"'';
@@ -31,6 +43,9 @@
       };
       "${homeDirectory}/.config/kitty/current-theme.jpg" = {
         source = ./configs/kitty/current-theme.conf;
+      };
+      "${homeDirectory}/.config/zellij/config.kdl" = {
+        source = ./configs/zellij/config.kdl;
       };
     };
     sessionVariables = {};
