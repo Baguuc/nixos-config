@@ -3,11 +3,18 @@
 { 
   programs.home-manager.enable = true;
   
-  home = {
+  home = rec {
     username = "baguuc";
     homeDirectory = "/home/baguuc";
     packages = [];
-    file = {};
+    file = {
+      "${homeDirectory}/.config/kitty/kitty.conf" = {
+        source = ./configs/kitty/kitty.conf;
+      };
+      "${homeDirectory}/.config/kitty/wallpaper.jpg" = {
+        source = ./images/3.jpg;
+      };
+    };
     sessionVariables = {};
 
     # do not change 

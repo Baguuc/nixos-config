@@ -15,6 +15,7 @@
     users = {
       baguuc = import ./home.nix;
     };
+    backupFileExtension = "bak";
   };
 
   boot = {
