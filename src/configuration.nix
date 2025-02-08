@@ -65,8 +65,9 @@
       };
     };
   };
+  hardware.bluetooth.enable = true;
 
-  console.keyMap = "pl2";
+  console.keyMap = "pl2"; 
   
   users.users.baguuc = {
     isNormalUser = true;
@@ -76,7 +77,7 @@
   
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   system.stateVersion = "24.11";
 }
