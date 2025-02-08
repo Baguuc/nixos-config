@@ -1,10 +1,21 @@
-{ config, pkgs, ... }:
-
+{ inputs, config, pkgs, ... }:
 {
   imports =
     [
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
+
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      baguuc = import ./home.nix;
+    };
+  };
 
   boot = {
     loader = {
@@ -45,9 +56,9 @@
       desktopManager.xterm.enable = false;
       windowManager.i3 = {
         enable = true;
-        extraPackages = with pkgs; [
-          i3lock
-        ];
+	extraPackages = with pkgs; [
+	  i3lock
+	];
       };
 
       xkb = {
@@ -73,7 +84,8 @@
   };
   
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];  
   
   system.stateVersion = "24.11";
 }
