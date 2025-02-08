@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 { 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    bash.enable = true;
+  };
   
   home = rec {
     username = "baguuc";
@@ -13,7 +16,12 @@
       rofi
       neovim
       git
+      bat
     ];
+    shellAliases = {
+      bat = ''bat --theme gruvbox-dark --style "numbers,changes"'';
+      cat = "bat";
+    };
     file = {
       "${homeDirectory}/.config/kitty/kitty.conf" = {
         source = ./configs/kitty/kitty.conf;
