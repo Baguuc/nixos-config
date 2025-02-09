@@ -29,10 +29,14 @@
       git
       bat
       zellij
+      eza
     ];
     shellAliases = {
       bat = ''bat --theme gruvbox-dark --style "numbers,changes"'';
       cat = "bat";
+      eza = "eza -1lhBmU --hyperlink --git";
+      exa = "eza";
+      ls = "eza";
     };
     file = {
       "${homeDirectory}/.config/kitty/kitty.conf" = {
@@ -47,8 +51,13 @@
       "${homeDirectory}/.config/zellij/config.kdl" = {
         source = ./configs/zellij/config.kdl;
       };
+      "${homeDirectory}/.config/eza/theme.yml" = {
+        source = ./configs/eza/theme.yml;
+      };
     };
-    sessionVariables = {};
+    sessionVariables = {
+      EXA_COLORS = "${homeDirectory}/.config/eza/theme.yml";
+    };
 
     # do not change 
     stateVersion = "24.05";
