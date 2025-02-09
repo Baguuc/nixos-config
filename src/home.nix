@@ -30,6 +30,7 @@
       bat
       zellij
       eza
+      xh
     ];
     shellAliases = {
       bat = ''bat --theme gruvbox-dark --style "numbers,changes"'';
@@ -37,6 +38,11 @@
       eza = "eza -1lhBmU --hyperlink --git";
       exa = "eza";
       ls = "eza";
+      get = "xh GET";
+      post = "xh POST";
+      delete = "xh DELETE";
+      put = "xh PUT";
+      patch = "xh PATCH";
     };
     file = {
       "${homeDirectory}/.config/kitty/kitty.conf" = {
