@@ -20,14 +20,13 @@
       };
     };
   in
-  {
+  { 
     nixosConfigurations = {
       baguucNixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
-
-	modules = [
-	  ./configuration.nix
-	];
+        modules = [
+          ./configuration.nix
+        ];
       };
     };
   };
