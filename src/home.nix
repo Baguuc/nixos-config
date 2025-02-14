@@ -15,6 +15,12 @@
       '';
     };
   };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
   
   home = rec {
     username = "baguuc";
@@ -32,6 +38,7 @@
       xh
       rustup
       rustc
+      davinci-resolve
     ];
     shellAliases = {
       bat = ''bat --theme gruvbox-dark --style "numbers,changes"'';
