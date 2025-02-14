@@ -22,10 +22,10 @@
   in
   { 
     nixosConfigurations = {
-      baguucNixos = nixpkgs.lib.nixosSystem {
+      dev-profile = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
         modules = [
-          ./configuration.nix
+          ./profiles/dev/configuration.nix
         ];
       };
     };

@@ -1,10 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
   environment.systemPackages = with pkgs; [
     home-manager
@@ -12,12 +11,15 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      baguuc = import ./home.nix;
-    };
     backupFileExtension = "bak";
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+  
   boot = {
     loader = {
       grub = {
@@ -82,8 +84,6 @@
     description = "baguuc";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  
-  nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
