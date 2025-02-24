@@ -11,6 +11,8 @@
     ../../modules/programs/eza/eza.nix
     ../../modules/programs/xh/xh.nix
     ../../modules/programs/rust/rust.nix
+    ../../modules/programs/feh/feh.nix
+    ../../modules/programs/gcc/gcc.nix
   ];
   
   home = rec {
