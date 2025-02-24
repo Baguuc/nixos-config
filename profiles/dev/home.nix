@@ -13,6 +13,7 @@
     ../../modules/programs/rust/rust.nix
     ../../modules/programs/feh/feh.nix
     ../../modules/programs/gcc/gcc.nix
+    ../../modules/programs/psql/psql.nix
   ];
   
   home = rec {
