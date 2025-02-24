@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./programs/i3wm/i3wm.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -53,21 +54,13 @@
   };
 
   services = {
-    displayManager.defaultSession = "none+i3";
-    xserver = {
-      enable = true;
-      desktopManager.xterm.enable = false;
-      windowManager.i3 = {
-        enable = true;
-      };
-
-      xkb = {
-        layout = "pl";
-        variant = "";
-      };
+    xserver.xkb = {
+      layout = "pl";
+      variant = "";
     };
     flatpak.enable = true;
   };
+
   hardware.bluetooth.enable = true;
   xdg.portal = {
     enable = true;
