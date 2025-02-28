@@ -15,6 +15,7 @@
     ../../modules/programs/gcc/gcc.nix
     ../../modules/programs/psql/psql.nix
     ../../modules/programs/go/go.nix
+    ../../modules/programs/lazygit/lazygit.nix
   ];
   
   home = rec {
