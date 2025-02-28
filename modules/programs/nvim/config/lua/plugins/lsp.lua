@@ -25,6 +25,8 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+vim.g.autoformat = false
+
 return {
   mason
 }
