@@ -6,18 +6,22 @@ local mason = {
   opts_extend = { "ensure_installed" },
   opts = {
     ensure_installed = {
-      "rust-analyzer"
+      "rust-analyzer",
+      "sqls"
     }
   }
 }
 
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
-    ['rust-analyzer'] = {
+    ["rust-analyzer"] = {
       filetype = { "rust" }
     },
+    ["sqls"] = {
+      filetype = { "sql" }
+    }
   },
 }
 

@@ -14,14 +14,12 @@
     ../../modules/programs/feh/feh.nix
     ../../modules/programs/gcc/gcc.nix
     ../../modules/programs/psql/psql.nix
+    ../../modules/programs/go/go.nix
   ];
   
   home = rec {
     username = "baguuc";
     homeDirectory = "/home/baguuc";
-    packages = with pkgs; [
-      alacritty
-    ];
 
     # do not change 
     stateVersion = "24.05";
