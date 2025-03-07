@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ../../modules/homebase.nix
     ../../modules/programs/kitty/kitty.nix
     ../../modules/programs/brave/brave.nix
     ../../modules/programs/rofi/rofi.nix
