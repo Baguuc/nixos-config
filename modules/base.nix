@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./programs/hyprland/configuration.nix
     ./programs/i3wm/i3wm.nix
     inputs.home-manager.nixosModules.home-manager
   ];

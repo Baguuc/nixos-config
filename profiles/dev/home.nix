@@ -3,7 +3,6 @@
   imports = [
     ../../modules/homebase.nix
     ../../modules/programs/kitty/kitty.nix
-    ../../modules/programs/brave/brave.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/nvim/nvim.nix
     ../../modules/programs/git/git.nix
