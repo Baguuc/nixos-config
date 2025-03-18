@@ -7,7 +7,8 @@ local mason = {
   opts = {
     ensure_installed = {
       "rust-analyzer",
-      "sqls"
+      "sqls",
+      "gopls"
     }
   }
 }
@@ -21,6 +22,9 @@ lspconfig.rust_analyzer.setup {
     },
     ["sqls"] = {
       filetype = { "sql" }
+    },
+    ["gopls"] = {
+      filetype = { "go" }
     }
   },
 }
