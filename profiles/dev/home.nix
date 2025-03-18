@@ -16,6 +16,7 @@
     ../../modules/programs/psql/psql.nix
     ../../modules/programs/go/go.nix
     ../../modules/programs/lazygit/lazygit.nix
+    ../../modules/programs/sqlitebrowser/sqlitebrowser.nix
   ];
   
   home = rec {
